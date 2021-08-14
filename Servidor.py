@@ -4,7 +4,7 @@ class Server():
 
     def __init__(self, hostname, port):
         self.hostname = "100.25.104.144"
-        self.port = "443"
+        self.port = 443
         self.dicc = {}
         self.connected = True
         
