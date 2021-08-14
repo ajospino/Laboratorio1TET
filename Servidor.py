@@ -14,7 +14,7 @@ class Server():
             print('Escuchando')
             self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             self.sock.bind((self.hostname, self.port))
-            print(self.port)
+            print(self.port, self.hostname)
             if(os.path.isdir('Buckets') == False):
                 os.mkdir('Buckets')
             self.sock.listen(1)
