@@ -3,8 +3,8 @@ import pickle, socket, multiprocessing, struct, os,shutil
 class Server():
 
     def __init__(self, hostname, port):
-        self.hostname = hostname
-        self.port = port
+        self.hostname = "100.25.104.144"
+        self.port = "443"
         self.dicc = {}
         self.connected = True
         
