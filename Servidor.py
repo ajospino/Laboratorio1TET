@@ -150,7 +150,7 @@ class Server():
     #         self.connected = False
         
     def cerrar_con(self):
-        # Cerrar conexión
+        # Cerrar conexion
         self.sock.close()
     
 if __name__ == "__main__":
