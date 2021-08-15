@@ -2,7 +2,7 @@ import socket
 from threading import Thread
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server_ip = "100.25.104.144"
+server_ip = "172.31.62.215"
 port  = 443
 s.bind((server_ip,port))
 print("Server Is Running On " + server_ip +" "+ str(port))
