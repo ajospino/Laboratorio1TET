@@ -1,5 +1,4 @@
 import socket
-from _thread import *
 import sys
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -54,5 +53,4 @@ def threaded_client(conn):
 while True:
     conn, addr = s.accept()
     print("Connected to: ", addr)
-    
-    start_new_thread(threaded_client, (conn,))
+
