@@ -2,7 +2,7 @@ import socket
 from threading import Thread
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server_ip = "100.25.104.144"
+server_ip = "ec2-100-25-104-144.compute-1.amazonaws.com"
 port  = 5050
 s.bind((server_ip,port))
 print("Server Is Running On " + server_ip +" "+ str(port))
