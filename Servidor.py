@@ -3,7 +3,7 @@ from threading import Thread
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_ip = "localhost"
-port  = 443
+port  = 5050
 s.bind((server_ip,port))
 print("Server Is Running On " + server_ip +" "+ str(port))
 
