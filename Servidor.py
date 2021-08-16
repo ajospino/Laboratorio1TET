@@ -47,18 +47,7 @@ class Server():
         shutil.rmtree(nombre)
         self.dicc['mensaje'] =f"el bucket {datos['bucket']} ha sido eliminado"
         self.enviar_archivo()
-    
-    def enviar_descargable(self,datos):
-        if(os.path.isfile('Buckets/' + datos['bucket'] +'/'+ datos['nombreArchivo']) == False):
-            print('Buckets/' + datos['bucket'] + datos['nombreArchivo'])
-            self.dicc['mensaje'] =f"El archivo {datos['nombreArchivo']} no existe"
-        else:
-            file = open('Buckets/' + datos['bucket'] +'/'+ datos['nombreArchivo'],'rb')
-            self.dicc['mensaje'] = f"Descarga realiza del archivo {datos['nombreArchivo']}"
-            self.dicc['archivo'] = file.read()
-            self.dicc['nombreArchivo'] = os.path.split('Buckets/' + datos['bucket'] + datos['nombreArchivo'])[1]
-            file.close
-        self.enviar_archivo()
+   
 
     def eliminar_archivo(self,datos):
         if(os.path.isfile('Buckets/' + datos['bucket'] +'/'+ datos['nombreArchivo'])== False):
