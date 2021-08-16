@@ -101,13 +101,6 @@ class Cliente():
                 self.recvallfile()
             if(variable == '7'):
                 self.dicc['comando'] = '7'
-                self.dicc['bucket'] = input('Ingrese el nombre del bucket donde quiere descargar el archivo \n')
-                self.dicc['nombreArchivo'] = input('Ingrese el nombre del archivo que quiere descargar\n')
-                self.enviar_archivo()
-                self.recvall()
-
-            if(variable == '8'):
-                self.dicc['comando'] = '8'
                 self.enviar_archivo()
                 self.cerrar_conexion()
 
