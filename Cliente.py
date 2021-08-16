@@ -61,7 +61,7 @@ class Cliente():
         variable = 1;
         colorama.init()
         while(int(variable) < 7):
-            print('Bienvenido a la central de control servidor-socket. En que le podemos ayudar hoy?''\n'+ '1)Crear bucket''\n' +'2)Eliminar un bucket''\n' +'3)Ver lista de todos los buckets''\n' +'4)Subir un archivo a un bucket''\n5)Eliminar un archivo de un bucket \n6)Listar archivos de un bucket\n7) Descargar un archivo\n8) Acabar con la conexion')
+            print('Bienvenido a la central de control servidor-socket. En que le podemos ayudar hoy?''\n'+ '1)Crear bucket''\n' +'2)Eliminar un bucket''\n' +'3)Ver lista de todos los buckets''\n' +'4)Subir un archivo a un bucket''\n5)Eliminar un archivo de un bucket \n6)Listar archivos de un bucket\n7)Acabar con la conexion')
             variable= input()
             if(variable == '1'):
                 self.dicc['comando'] = '1'
