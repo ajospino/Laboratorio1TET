@@ -48,17 +48,6 @@ class Server():
         self.dicc['mensaje'] =f"el bucket {datos['bucket']} ha sido eliminado"
         self.enviar_archivo()
 
-
-    def eliminar_archivo(self,datos):
-        if(os.path.isfile('Buckets/' + datos['bucket'] +'/'+ datos['nombreArchivo'])== False):
-            self.dicc['mensaje'] =f"El archivo {datos['nombreArchivo']} no existe"
-        else:
-            nombre = 'Buckets/' + datos['bucket']+'/' + datos['nombreArchivo']
-            os.remove(nombre)
-            self.dicc['mensaje'] =f"el archivo {datos['nombreArchivo']} ha sido eliminado"
-        self.enviar_archivo()
-
-
     def enviar_archivo(self):
         message = pickle.dumps(self.dicc)
         self.conn.sendall(message)
@@ -86,16 +75,6 @@ class Server():
             count -= len (newbuf)
         return buf
 
-    def guardar_archivo(self,datos):
-
-        if(os.path.isdir('Buckets/' + datos['bucket']) == False):
-            os.mkdir('Buckets/' + datos['bucket'])
-        file = open('Buckets/' + datos['bucket']+'/'+datos['nombreArchivo'],'wb')
-        file.write(datos['contenido'])
-        file.close()
-        self.dicc['mensaje'] =f"El archivo {datos['nombreArchivo']} ha sido guardado"
-        self.enviar_archivo()
-
     def listar_archivos(self,datos):
         if(os.path.isdir('Buckets/' + datos['bucket']) == False):
             self.dicc['mensaje'] = f"No existe el bucket {datos['bucket']}"
@@ -121,19 +100,6 @@ class Server():
             self.enviar_archivo()
 
         if(datos['comando'] == '4'):
-            self.guardar_archivo(datos)
-
-        if(datos['comando'] == '5'):
-            self.eliminar_archivo(datos)
-
-        if(datos['comando'] == '6'):
-            self.listar_archivos(datos)
-
-        if(datos['comando'] == '7'):
-            print("7")
-            self.enviar_descargable(datos)
-
-        if(datos['comando'] == '8'):
             print("Se esta cerrando el servidor.")
             self.connected = False
 

@@ -19,13 +19,6 @@ class Cliente():
         x = input('ingrese comando')
         self.dicc[1] = x
     
-    def leer_archivo(self, path):
-        file = open(path, 'rb')
-        self.dicc['contenido'] = file.read()
-        file.read()
-        self.dicc['nombreArchivo'] = os.path.split(path)[1]
-        file.close()
-    
     def enviar_archivo(self):
         # Enviar datos al servidor
         # print("pasa por aca ")
@@ -80,28 +73,6 @@ class Cliente():
                 self.recvallfile()
             if(variable == '4'):
                 self.dicc['comando'] = '4'
-                path = input('Ingrese el path del archivo a subir \n')
-                bucket = input('Ingrese el bucket(Carpeta) donde quiere que el archivo se suba \n')
-                self.dicc['bucket'] = bucket
-                self.leer_archivo(path)
-                self.enviar_archivo()
-                self.recvall()
-            if(variable == '5'):
-                self.dicc['comando'] = '5'
-                bucket = input('Ingrese el bucket(Carpeta) de donde quiere eliminar el archivo \n')
-                path = input('Ingrese el nombre del archivo a eliminar (con extension) \n')
-                self.dicc['bucket'] = bucket
-                self.dicc['nombreArchivo'] = path
-                self.enviar_archivo()
-                self.recvall()
-            if(variable == '6'):
-                self.dicc['comando'] = '6'
-                bucket = input('Ingrese el nombre del bucket donde quiere listar los archivos \n')
-                self.dicc['bucket'] = bucket
-                self.enviar_archivo()
-                self.recvallfile()
-            if(variable == '7'):
-                self.dicc['comando'] = '7'
                 self.enviar_archivo()
                 self.cerrar_conexion()
 
