@@ -75,6 +75,7 @@ class Cliente():
                 self.recvall()
             if(variable == '3'):
                 self.dicc['comando'] = '3'
+                self.dicc['bucket'] = " "
                 self.enviar_archivo()
                 self.recvallfile()
             if(variable == '4'):
