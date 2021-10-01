@@ -2,9 +2,9 @@ import socket, pickle, struct,os, colorama
 
 class Cliente():
     
-    def __init__(self, hostname, port):
-        self.hostname = hostname
-        self.port = port 
+    def __init__(self):
+        self.hostname = '172.31.62.214'
+        self.port = 5050 
         self.dicc = {}
      
     def iniciar_conexion(self):
@@ -75,6 +75,7 @@ class Cliente():
                 self.recvall()
             if(variable == '3'):
                 self.dicc['comando'] = '3'
+                self.dicc['bucket'] = " "
                 self.enviar_archivo()
                 self.recvallfile()
             if(variable == '4'):
@@ -105,7 +106,7 @@ class Cliente():
                 self.cerrar_conexion()
 
 if __name__ == "__main__":
-    c = Cliente(hostname = 'localhost', port = 5050)
+    c = Cliente()
     c.iniciar_conexion()
     c.inter_user()
     c.cerrar_conexion()
