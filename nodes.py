@@ -24,12 +24,19 @@ def ver_lengh(key):
                 print("entre 1")
                 return True
             else:
-                if num >= len(nodo.siguiente.dato):
-                    nodo = nodo.siguiente
-                else:
                     nodo = nodo.siguiente
         else:
-            print("TTOOTOT")
+            no1 = nodo
+            nres = nodo
+            while no1 != None:
+                if(no1.siguiente != None and num >= len(no1.siguiente.dato)):
+                    if key in nodo.siguiente.dato:
+                        return nodo
+                else:
+                     nodo = nodo.siguiente
+
+            if  nodo.siguiente != None and num >= len(nodo.siguiente.dato):
+                
             return nodo
     
 
@@ -61,7 +68,10 @@ def crear_nodo(vare,key,valor):
 def agregar_valor(nodo,key,valor):
     
     nodo.dato[key] = valor
-    print(globals())
+    noss = n1 
+    while noss != None:
+        print(noss.dato)
+        noss = noss.siguiente
 
 def recorrer():
     global o
